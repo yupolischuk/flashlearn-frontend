@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import TestRequest from './TestRequest'
+// import Test_Rest from './Test_Rest'
 
 class Navbar extends React.Component {
     render() {
@@ -16,18 +17,19 @@ class Navbar extends React.Component {
     }
 }
 
-
 class Decks extends React.Component {
 
     render() {
         const decks = getDecks();
+
         var listDecks = decks.map((deck) =>
-            <li>{deck['name']}
+            <li>{deck['name']} |
                 <button>Watch</button>
                 <button>Learn</button>
                 <button>Add Card</button>
                 <button>Update</button>
                 <button>Delete</button>
+                <hr/>
             </li>
         );
 
@@ -41,12 +43,16 @@ class Decks extends React.Component {
 }
 
 
+
+
 class App extends React.Component {
     render() {
         return (
             <div className="App">
                 <Navbar />
                 <Decks />
+                <TestRequest />
+                <Test_Rest />
             </div>
         );
     }
@@ -83,5 +89,6 @@ function getDecks() {
         '  }\n' +
         ']');
 }
+
 
 
