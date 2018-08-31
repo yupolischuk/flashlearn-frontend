@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const API = '127.0.0.1:5000/test_rest/';
+const API = 'http://127.0.0.1:5000/test_rest/';
 
 class Test_Rest extends Component {
     constructor(props) {
@@ -14,24 +14,44 @@ class Test_Rest extends Component {
     componentDidMount() {
         fetch(API)
             .then(response => response.json())
-            .then(data => this.setState({ hits: data.hits }));
+            .then(data => this.setState({ test_decks: data }));
     }
 
 
 
     render() {
-        const { hits } = this.state;
+        const { test_decks } = this.state;
+        console.log('***decks***');
+        console.log(test_decks);
+
 
         return (
-
-            <ul>
-                {hits.map(hit =>
-                    <li key={hit.objectID}>
-                        <a href={hit.url}>{hit.title}</a>
-                    </li>
-                )}
-            </ul>
+            'test_rest'
         );
+
+        // var list_test_decks = test_decks.map((deck) =>
+        //     <li>
+        //         {deck['name']}
+        //     </li>
+        // );
+        //
+        //
+        // return (
+        //     <div className="list-test-decks">
+        //         List test decks
+        //         { list_test_decks }
+        //     </div>
+        // )
+
+        // return (
+        //     <ul>
+        //         {decks.map(deck =>
+        //             <li>
+        //                 {deck['name']}
+        //             </li>
+        //         )}
+        //     </ul>
+        // )
     }
 }
 

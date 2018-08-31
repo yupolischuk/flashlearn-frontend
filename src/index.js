@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestRequest from './TestRequest'
-// import Test_Rest from './Test_Rest'
+import Test_Rest from "./Test_Rest";
 
 class Navbar extends React.Component {
     render() {
